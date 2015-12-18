@@ -23,6 +23,7 @@ Don't forget to link it in your application index.html
 ````
  <script src="path/to/your/json.js"></script>
 ````
+![JSON](/img/json-angular.png?raw=true "JSON")
 
 ###PHP
 
@@ -39,5 +40,4 @@ Then, you need to configure your in_dev() function with your own ip address
 After this, if you need to dump data, you can use the function vardump();
 
 This will display the dump tab
-
 ![Var dump](/img/php-dump.png?raw=true "VarDump")
