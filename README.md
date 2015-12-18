@@ -1,6 +1,18 @@
-## HOW TO print variables nicely on the page
+## HOW TO PRINT NICELY YOUR VARS
 
 ###AngularJS
 
-Display the vars
+First step, you need to install bootstrap angular to your project
+
+Bower :
+
+````
+ bower install angular-bootstrap
+````
+
+[https://angular-ui.github.io/bootstrap/](Documentation for angular ui bootstrap)
+
+````
+ angular.module('app',['ui.bootstrap'])
+````
 
