@@ -2,21 +2,36 @@
 
 
 if(!function_exists('in_dev')) {
+    /**
+     * Function used to display some informations for the developer
+     *
+     * @return bool
+     */
     function in_dev()
     {
+        // Here put your office/home IP address so that the dump will be only seen by you and your team
+        $devAdress = ['YOUR.IP.ADDRESS.HERE', '127.0.0.1', '::1', 'localhost'];
 
-        $devAdress = ['82.227.107.39', '127.0.0.1', '::1', 'localhost'];
-
-        return in_array($_SERVER['REMOTE_ADDR'], $devAdress) ? true : false;
+        return in_array($_SERVER['REMOTE_ADDR'], $devAdress);
     }
 }
 
 
+// Differents cases for the vardump function
+
+// The vardump function only returns in a string the var_dump data (usefull for pages needing reload)
 const ONLY_RETURN = 0;
+
+// The vardump function returns only display the accordeon
 const ONLY_DISPLAY = 1;
+
+// The vardump function returns in a string the var_dump data and display the accordeon (Default case)
 const RETURN_AND_DISPLAY = 2;
 
 /**
+ *
+ * Used to dump data in accordeon
+ *
  * @param null $var
  * @param int $return
  * @return string

@@ -3,7 +3,12 @@ app.directive('json',function () {
         restrict: 'E',
         template: function() {
 
-            var style = '<style>json .panel-group {' +
+            // Some style vars
+            var height = '450px';
+            var background = '#4dba9d';
+
+            // Here you can add style
+            var style = 'json .panel-group {' +
                 'position: fixed;' +
                 'bottom: 0;' +
                 'left: 0;' +
@@ -12,7 +17,7 @@ app.directive('json',function () {
                 'z-index: 9; }' +
                 'json .panel-group .panel-heading {' +
                 'padding: 0; ' +
-                'background-color : #4dba9d;' +
+                'background-color : '+ background +';' +
                 'color:#fff;}' +
                 'json .panel-group .panel-title a {' +
                 'width: 100%;' +
@@ -20,10 +25,11 @@ app.directive('json',function () {
                 'padding: 10px;' +
                 'color #fff }' +
                 'json .panel-group .panel-body {' +
-                'max-height: 450px;' +
-                'overflow-y: scroll; }</style>';
+                'max-height: '+ height +';' +
+                'overflow-y: scroll; }';
 
-            return style + '<accordion class="mg-top-25">' +
+            return '<style>' +style + '</style>'+
+                '<accordion class="mg-top-25">' +
                 '<accordion-group heading="JSON">' +
                 '<pre>{{value | json}}</pre>' +
                 '</accordion-group>' +
